@@ -4,6 +4,7 @@ import  {BrowserRouter as Router, Switch, Route}  from 'react-router-dom'
 import Navbar from './components/nav/Navbar'
 import Logo from './components/nav/CartWidget';
 import  ItemCount  from './components/catalogo/ItemCount'
+import ItemListContainer from './ItemlistContainer/ItemListContainer';
 
 
 const onAdd= (quantity) =>{
@@ -15,13 +16,15 @@ const onAdd= (quantity) =>{
 function App() {
   return (
     <div className="App">
-     <Router>
+     <div>
       <Navbar/>
       <Logo/>
-     </Router>
-     <section>
-      <ItemCount initial={1} stock={5} onAdd={onAdd}></ItemCount>
-     </section>
+     </div>
+     <br></br>
+     <div>
+      <ItemListContainer/>
+     </div>
+     
      </div>
   );
 }
