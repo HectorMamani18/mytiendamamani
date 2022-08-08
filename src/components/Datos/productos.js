@@ -3,28 +3,28 @@
     "articulo" :  "Conjunto a Cuadros ",
     "Precio"  : " 30.000",
     "Stock"  : "15",
-    "imagen"  : "public\img\cuadros.jpg"
+    "imagen"  : "https://raw.githubusercontent.com/HectorMamani18/mytiendamamani/master/public/img/cuadros.jpg"
 },
 {
     "id"  : "2",
     "articulo" :  "Estilo Tradicional ",
     "Precio"  : " 50.000",
     "Stock"  : "10",
-    "imagen"  : ""
+    "imagen"  : "https://raw.githubusercontent.com/HectorMamani18/mytiendamamani/master/public/img/Tradicional.jpg"
 },
 {
     "id"  : "3",
     "articulo" :  "Saco largo ",
     "Precio"  : " 20.000",
     "Stock"  : "12",
-    "imagen"  : ""
+    "imagen"  : "https://raw.githubusercontent.com/HectorMamani18/mytiendamamani/master/public/img/Sacolargo.jpg"
 },
 {
     "id"  : "4",
     "articulo" :  "Smoking Negro ",
     "Precio"  : " 30.000",
     "Stock"  : "30",
-    "imagen"  : ""
+    "imagen"  : "https://raw.githubusercontent.com/HectorMamani18/mytiendamamani/master/public/img/Smoking.jpg"
 },
 
 ]
