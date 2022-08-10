@@ -29,7 +29,7 @@ return(
           <Card.Title >{Traje.articulo}</Card.Title>
           <Card.Text>${Traje.Precio}</Card.Text>
           <Button variant="primary">Especificaciones</Button>
-          <ItemCount stock={Traje.Stock} initial={1}/>
+          <h6>Stock disponible:{Traje.Stock}</h6>
         </Card.Body>
       </Card>)
         }
