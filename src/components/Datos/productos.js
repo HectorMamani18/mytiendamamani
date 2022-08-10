@@ -17,7 +17,7 @@
     "articulo" :  "Saco largo ",
     "Precio"  : " 20.000",
     "Stock"  : "12",
-    "imagen"  : "https://raw.githubusercontent.com/HectorMamani18/mytiendamamani/master/public/img/saco.jpg"
+    "imagen"  : "https://raw.githubusercontent.com/HectorMamani18/mytiendamamani/master/public/img/61NZO%2BVWRyL._AC_UX569_.jpg"
 },
 {
     "id"  : "4",
