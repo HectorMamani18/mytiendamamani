@@ -2,8 +2,8 @@ import  React,{ useEffect, useState } from "react"
 import getFetch from "../Datos/productos"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ItemCount from "./ItemCount";
 import '../css/Item.css'
+
   
 function Item(){
     const[Datos,setDatos] = useState([])
@@ -26,9 +26,8 @@ return(
         <Card  key={Traje.id} style={{ width: '18rem' }}>
         <Card.Img src={Traje.imagen} variant="top"  />
         <Card.Body>
-          <Card.Title >{Traje.articulo}</Card.Title>
-          <Card.Text>${Traje.Precio}</Card.Text>
-          <Button variant="primary">Especificaciones</Button>
+          <Card.Title >{Traje.articulo}</Card.Title>         
+          <Button variant="primary" >Especificaciones</Button>
           <h6>Stock disponible:{Traje.Stock}</h6>
         </Card.Body>
       </Card>)

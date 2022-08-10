@@ -2,4 +2,6 @@
     display: flex;
     justify-content: space-around;
     background-color: rgba(117, 124, 124, 0.5);
+    width: 80%;
+   
 }

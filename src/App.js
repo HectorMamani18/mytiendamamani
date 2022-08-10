@@ -3,9 +3,8 @@ import React from 'react';
 import  {BrowserRouter as Router, Switch, Route}  from 'react-router-dom'
 import Navbar from './components/nav/Navbar'
 import Logo from './components/nav/CartWidget';
-import  ItemCount  from './components/catalogo/ItemCount'
+import ItemDetail from './components/ItemDetailContainer/ItemDetail'
 import ItemListContainer from './ItemlistContainer/ItemListContainer';
-
 
 const onAdd= (quantity) =>{
   console.log(`compraste ${quantity}unidades`);
@@ -22,7 +21,8 @@ function App() {
      </div>
      <br></br>
      <div>
-      <ItemListContainer/>
+      <ItemListContainer />
+      <ItemDetail/>
      </div>
      
      </div>
