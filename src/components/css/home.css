@@ -1,0 +1,14 @@
+.Titulo{
+    background-color:  black;
+    color: white;
+}
+
+ion-icon{
+    font-size: 460%;
+    display: block;
+    position: absolute;
+    top: -2%;
+    right: 15%;
+    border-radius: 0px;
+    color: white;
+  }

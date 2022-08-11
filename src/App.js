@@ -1,29 +1,21 @@
 import './App.css';
 import React from 'react';
-import  {BrowserRouter as Router, Switch, Route}  from 'react-router-dom'
-import Navbar from './components/nav/Navbar'
-import Logo from './components/nav/CartWidget';
-import ItemDetail from './components/ItemDetailContainer/ItemDetail'
-import ItemListContainer from './ItemlistContainer/ItemListContainer';
-
-const onAdd= (quantity) =>{
-  console.log(`compraste ${quantity}unidades`);
-}
-
+import {Routes, Route} from 'react-router-dom'
+import Home from './components/pages/Home';
+import Detalles from './components/pages/Detalles';
+import Catalogo from './components/pages/Catalogo';
 
 
 function App() {
   return (
     <div className="App">
-     <div>
-      <Navbar/>
-      <Logo/>
-     </div>
-     <br></br>
-     <div>
-      <ItemListContainer />
-      <ItemDetail/>
-     </div>
+     
+      <Routes>
+        <Route path='/'element={<Home/>}/>
+        <Route path='/Catalogo' element={<Catalogo/>}/>
+        <Route path='/Detalles'element={<Detalles/>}/>
+      </Routes>
+     
      
      </div>
   );

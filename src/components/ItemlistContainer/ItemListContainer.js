@@ -1,6 +1,6 @@
 import React from 'react'
-import ItemList from '../components/catalogo/ItemList';
-import Item from '../components/catalogo/Item';
+import ItemList from '../catalogo/ItemList';
+
 
 
 

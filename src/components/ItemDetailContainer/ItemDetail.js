@@ -1,50 +1,45 @@
-import React,{ useEffect, useState } from "react";
-import Table from 'react-bootstrap/Table';
+import DetailData from'../Datos/DetailData.json'
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import ItemCount from '../catalogo/ItemCount';
+import '../css/Item.css'
 
-function ItemDetailContainer(){
-    const [items, setItems] = useState([])
 
-    useEffect(()=>{
-        fetch("public/DetailData.json")
-        .then(response => response.json())
-        .then(data=>{
-            setItems(data)
-        })
-    },[])
-     
+function Detail(){
 
-    return items  
-        
+
+
+
+return(
+  <div className='container'>
+
+    {
+      DetailData.map(DeData=>{
+        return(
+          <div > 
+          <Card style={{ width: '18rem' }}>
+          <Card.Img src={DeData.Img} variant="top" />
+          <Card.Body >
+            <Card.Title >{DeData.Descripcion}</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroup.Item>${DeData.Precio}</ListGroup.Item>
+            <ListGroup.Item>Disponibles:{DeData.Stock}</ListGroup.Item>
+            <ListGroup.Item>Talles:{DeData.Talles}</ListGroup.Item>
+          </ListGroup>
+         <ItemCount initial={1} Stock={DeData.Stock}/>
+        </Card>
+        </div>
+        )
+      })
     }
- 
-export default   function Detail(){
-    const Detail = ItemDetailContainer() 
-
-
-
-    return(
-        <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Precio</th>
-            <th>Descripcion</th>
-            <th>Talles</th>
-          </tr>
-        </thead>
-        <tbody>
-            {Detail.map(ds=>(
-
-           <tr key={ds.id}>
-            <td>{ds.Precio}</td>
-            <td>{ds}</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-           </tr>
-
-
-            ))}
-
-        </tbody>
-      </Table>
-    )
+  </div>
+);
 }
+
+export default Detail;

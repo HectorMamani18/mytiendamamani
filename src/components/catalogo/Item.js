@@ -1,13 +1,22 @@
 import  React,{ useEffect, useState } from "react"
 import getFetch from "../Datos/productos"
 import Button from 'react-bootstrap/Button';
+import {useNavigate} from 'react-router-dom'
 import Card from 'react-bootstrap/Card';
 import '../css/Item.css'
-
+ 
   
 function Item(){
     const[Datos,setDatos] = useState([])
-    const[loading,setLoading]=useState(true)
+   
+   // const[loading,setLoading]=useState(true)
+
+   const navigatefn = useNavigate();
+
+const LoadUserDetail = ()=>{
+  navigatefn('/Detalles')
+}
+
 
 
 
@@ -15,7 +24,7 @@ useEffect (()=>{
     getFetch
     .then((resp)=>setDatos(resp))
     .catch(err=>console.log(err))
-    .finally(()=>setLoading(false))
+    //.finally(()=>setLoading(false))
 
 },[])
 
@@ -27,8 +36,8 @@ return(
         <Card.Img src={Traje.imagen} variant="top"  />
         <Card.Body>
           <Card.Title >{Traje.articulo}</Card.Title>         
-          <Button variant="primary" >Especificaciones</Button>
           <h6>Stock disponible:{Traje.Stock}</h6>
+          <Button variant="secondary" onClick={LoadUserDetail}>Detalles</Button>
         </Card.Body>
       </Card>)
         }
