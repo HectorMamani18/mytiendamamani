@@ -8,7 +8,9 @@ import '../css/Item.css'
 
 function Detail(){
 
-
+  const onAdd= (quantity) =>{
+    console.log(`compraste ${quantity}unidades`);
+  }
 
 
 return(
@@ -17,7 +19,7 @@ return(
     {
       DetailData.map(DeData=>{
         return(
-          <div > 
+          <div key={DeData.id}> 
           <Card style={{ width: '18rem' }}>
           <Card.Img src={DeData.Img} variant="top" />
           <Card.Body >
@@ -32,7 +34,7 @@ return(
             <ListGroup.Item>Disponibles:{DeData.Stock}</ListGroup.Item>
             <ListGroup.Item>Talles:{DeData.Talles}</ListGroup.Item>
           </ListGroup>
-         <ItemCount initial={1} Stock={DeData.Stock}/>
+         <ItemCount initial={1} Stock={DeData.Stock} onAdd={onAdd}/>
         </Card>
         </div>
         )

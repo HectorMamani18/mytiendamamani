@@ -1,18 +1,24 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom'
 
-import Detail from "../ItemDetailContainer/ItemDetail";
- const Buton = () =>{
-    const Pulse= ()=>{
+ function Buton (id) {
+    const navigatefn = useNavigate();
 
-  
+    const LoadUserDetail = ()=>{
+      console.log ('UserId>', id);
+      navigatefn("/Detalles")
     }
-return (
-    <div>
-       <button onClick={(e)=>Pulse()}> Especificaciones</button>
-         
-    </div>
-)
+ return(
+    <button onClick={LoadUserDetail}> Detalles</button>
+ )
+
 
 }
+    
+  
+    
+
+
+
 
 export default Buton;
