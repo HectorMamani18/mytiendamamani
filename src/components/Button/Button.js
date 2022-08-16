@@ -1,11 +1,11 @@
 import React from "react";
 import {useNavigate} from 'react-router-dom'
 
- function Buton (id) {
+ function Buton () {
     const navigatefn = useNavigate();
 
     const LoadUserDetail = ()=>{
-      console.log ('UserId>', id);
+    
       navigatefn("/Detalles")
     }
  return(

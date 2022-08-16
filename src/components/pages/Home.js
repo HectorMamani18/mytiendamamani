@@ -2,7 +2,7 @@ import '../css/home.css'
 import Navbar from '../nav/Navbar'
 import React from 'react'
 import Logo from '../nav/CartWidget'
-import ItemDetail from '../ItemDetailContainer/ItemDetail'
+
 
 
 export default function Home () {

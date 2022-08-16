@@ -4,12 +4,21 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ItemCount from '../catalogo/ItemCount';
 import '../css/Item.css'
+import {Link } from 'react-router-dom'
+import {useState} from "react"
 
 
 function Detail(){
+  const [productAddedToCard, setProductAddedToCard] = useState(false);
 
   const onAdd= (quantity) =>{
-    console.log(`compraste ${quantity}unidades`);
+   
+  console.log(
+      "Cantidad agregada: ",
+      quantity
+  );
+  setProductAddedToCard(true);
+
   }
 
 
@@ -34,7 +43,11 @@ return(
             <ListGroup.Item>Disponibles:{DeData.Stock}</ListGroup.Item>
             <ListGroup.Item>Talles:{DeData.Talles}</ListGroup.Item>
           </ListGroup>
-         <ItemCount initial={1} Stock={DeData.Stock} onAdd={onAdd}/>
+        { productAddedToCard ?  <Link to={'/Cart'}> Terminar Mi Compra</Link> : (
+        <ItemCount  initial={1} stock={DeData.Stock}  onAdd={onAdd}   />)
+        }
+         
+         
         </Card>
         </div>
         )
