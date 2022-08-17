@@ -1,20 +1,18 @@
-import DetailData from'../Datos/DetailData.json'
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
+import { useParams,Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import ItemCount from '../catalogo/ItemCount';
-import '../css/Item.css'
-import {Link } from 'react-router-dom'
-import {useState} from "react"
+import ItemCount from '../catalogo/ItemCount'
 
 
-function Detail(){
+
+function Detail() {
   const [productAddedToCard, setProductAddedToCard] = useState(false);
 
   const onAdd= (quantity) =>{
    
   console.log(
-      "Cantidad agregada: ",
+      "Haz Agregado al Carrito: ",
       quantity
   );
   setProductAddedToCard(true);
@@ -22,39 +20,50 @@ function Detail(){
   }
 
 
-return(
-  <div className='container'>
+	const { itemId } = useParams();
+  const [item, setItem] = useState({});
 
-    {
-      DetailData.map(DeData=>{
-        return(
-          <div key={DeData.id}> 
-          <Card style={{ width: '18rem' }}>
-          <Card.Img src={DeData.Img} variant="top" />
-          <Card.Body >
-            <Card.Title >{DeData.Descripcion}</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-          </Card.Body>
-          <ListGroup className="list-group-flush">
-            <ListGroup.Item>${DeData.Precio}</ListGroup.Item>
-            <ListGroup.Item>Disponibles:{DeData.Stock}</ListGroup.Item>
-            <ListGroup.Item>Talles:{DeData.Talles}</ListGroup.Item>
-          </ListGroup>
+	useEffect(() => {
+
+		
+		const getItem = async () => {
+			const respuesta = await fetch(`/Data.json`,)
+			const objJson = await respuesta.json();
+			const ArrayDatos = objJson.productos;
+			const ret = ArrayDatos.find(
+				(objElem) => objElem.id === String(itemId))
+			return ret || {};
+      
+		};
+
+		getItem()
+			.then((item) => {
+				setItem(item);
+		
+			})
+
+	}, []);
+
+    return (
+		<div id={item.id}>
+			  <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
         { productAddedToCard ?  <Link to={'/Cart'}> Terminar Mi Compra</Link> : (
-        <ItemCount  initial={1} stock={DeData.Stock}  onAdd={onAdd}   />)
+        <ItemCount  initial={1} stock={item.Stock}  onAdd={onAdd}   />)
         }
-         
-         
-        </Card>
-        </div>
-        )
-      })
-    }
-  </div>
-);
+      </Card.Body>
+    </Card>
+
+					
+			
+		</div>
+    );
 }
 
 export default Detail;

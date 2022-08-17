@@ -4,6 +4,7 @@ import Navbar from '../nav/Navbar';
 import Logo from '../nav/CartWidget';
 
 
+
 function Detalles(){
 
     return(
