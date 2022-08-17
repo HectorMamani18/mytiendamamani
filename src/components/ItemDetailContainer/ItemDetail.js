@@ -7,7 +7,7 @@ import ItemCount from '../catalogo/ItemCount'
 
 
 function Detail() {
-  const [productAddedToCard, setProductAddedToCard] = useState(false);
+  const [productoAgregado, setProductoAgregado] = useState(false);
 
   const onAdd= (quantity) =>{
    
@@ -15,7 +15,7 @@ function Detail() {
       "Haz Agregado al Carrito: ",
       quantity
   );
-  setProductAddedToCard(true);
+  setProductoAgregado(true);
 
   }
 
@@ -54,7 +54,7 @@ function Detail() {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        { productAddedToCard ?  <Link to={'/Cart'}> Terminar Mi Compra</Link> : (
+        { productoAgregado ?  <Link to={'/Cart'}> Terminar Mi Compra</Link> : (
         <ItemCount  initial={1} stock={item.Stock}  onAdd={onAdd}   />)
         }
       </Card.Body>
