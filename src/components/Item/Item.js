@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import '../css/Item.css'
+import './Item.css'
  import React from 'react';
  import Buton from '../Button/Button';
   

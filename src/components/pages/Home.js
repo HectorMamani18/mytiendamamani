@@ -1,7 +1,7 @@
 import '../css/home.css'
 import Navbar from '../nav/Navbar'
 import React from 'react'
-import Logo from '../nav/CartWidget'
+import Logo from '../Icon/CartWidget'
 
 
 

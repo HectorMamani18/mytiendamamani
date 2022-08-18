@@ -1,15 +1,19 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams,Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
-import ItemCount from '../catalogo/ItemCount'
+import ItemCount from '../ItemCount/ItemCount'
+import {Context}  from '../Context/CartContext';
 
 
 
 function Detail() {
+  const {addCartItem} = useContext(Context);
+
   const [productoAgregado, setProductoAgregado] = useState(false);
 
   const onAdd= (quantity) =>{
+    addCartItem();
    
   console.log(
       "Haz Agregado al Carrito: ",

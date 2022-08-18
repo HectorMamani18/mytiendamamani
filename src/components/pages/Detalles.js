@@ -1,7 +1,7 @@
-import Detail from '../ItemDetailContainer/ItemDetail'
+import Detail from '../ItemDetail/ItemDetail';
 import React from 'react';
 import Navbar from '../nav/Navbar';
-import Logo from '../nav/CartWidget';
+import Logo from '../Icon/CartWidget'
 
 
 

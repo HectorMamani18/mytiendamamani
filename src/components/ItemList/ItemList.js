@@ -1,7 +1,7 @@
 
 import  React,{ useEffect, useState } from "react"
 import getFetch from "../Datos/productos"
-import Item from '../catalogo/Item'
+import Item from '../Item/Item'
 
 
 
