@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemListContainer from '../ItemlistContainer/ItemListContainer'
+import ItemListContainer from '../List/ItemlistContainer/ItemListContainer'
 import Navbar from '../nav/Navbar'
 import '../css/home.css'
 const Boda = () => {

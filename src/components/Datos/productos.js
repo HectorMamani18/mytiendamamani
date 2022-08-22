@@ -1,13 +1,13 @@
  const  Datos = [{
     
     id : 1,
-    categoria: 1,
+    categoria: 2,
     Precio: 30.000,
     articulo :  "Conjunto a Cuadros ",
     Stock : 15,
     imagen  : [{
         id:0,
-        src: 'https://www.technopat.net/vt/wp-content/uploads/2016/10/Motorola-StarTAC-Rainbow-580x500.jpg' } ]
+        src: 'https://raw.githubusercontent.com/HectorMamani18/mytiendamamani/master/public/img/cuadros.jpg' } ]
     
 },
 {
@@ -22,7 +22,7 @@
 },
 {
     id  : 3,
-    categoria:2,
+    categoria:1,
     Precio: 30.000,
     articulo :  "Saco largo ",
     Stock  : 12,

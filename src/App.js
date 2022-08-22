@@ -5,8 +5,7 @@ import Home from './components/pages/Home';
 import Cart from './components/pages/Cart'
 import Boda from './components/pages/Boda'
 import  CartContextProvider  from './components/Context/CartContext';
-import Detalles from './components/pages/Detalles'
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import ItemDetailContainer from './components/Detalles/ItemDetailContainer/ItemDetailContainer';
 function App() {
   
   return (

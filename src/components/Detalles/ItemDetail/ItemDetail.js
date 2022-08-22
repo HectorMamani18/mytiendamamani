@@ -1,9 +1,9 @@
 
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import ItemCount from '../ItemCount/ItemCount'
-import {Context}  from '../Context/CartContext';
+import {Context}  from '../../Context/CartContext';
 
 
 
@@ -31,7 +31,7 @@ function Detail( id,articulo,Precio,imagen,Stock) {
     return (
 		<div >
 			  <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Img variant="top" src={primerImg.src} />
       <Card.Body>
         <Card.Title>{articulo}</Card.Title>
         <Card.Text>{Precio}</Card.Text>

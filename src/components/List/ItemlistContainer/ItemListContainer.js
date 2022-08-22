@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList'
-import Datos, {prodData} from '../Datos/productos'
+import  {prodData} from '../../Datos/productos'
 
 
 
@@ -27,7 +27,7 @@ import Datos, {prodData} from '../Datos/productos'
      return (
     <div>
         {Array.isArray(listItem) && listItem.length === 0 ?(
-            <div>cargando</div>
+           <br></br>
         ):(
             <ItemList productos={listItem}/>
         )}

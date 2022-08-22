@@ -1,8 +1,8 @@
 import '../css/home.css'
 import Navbar from '../nav/Navbar'
 import React from 'react'
-import Logo from '../Icon/CartWidget'
-import ItemListContainer from '../ItemlistContainer/ItemListContainer'
+import Logo from '../nav/Icon/CartWidget'
+import ItemListContainer from '../List/ItemlistContainer/ItemListContainer'
 
 
 
