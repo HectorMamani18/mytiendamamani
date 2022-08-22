@@ -11,7 +11,7 @@ export default function ItemDetailContainer(){
 
     const {dataDeil, setDataDeil} = useState({});
     useEffect(()=>{
-        setDataDeil({});
+        setDataDeil({})
         const produprom = getItem(produId)
         produprom.then(
             (Datos)=>{
