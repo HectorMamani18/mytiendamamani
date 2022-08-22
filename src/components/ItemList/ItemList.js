@@ -1,33 +1,19 @@
-
-import  React,{ useEffect, useState } from "react"
-import getFetch from "../Datos/productos"
+import  React from "react"
 import Item from '../Item/Item'
 
 
 
 
-function ItemList() {
-  const[Datos,setDatos] = useState([])
-   
-useEffect (()=>{
-    getFetch
-    .then((resp)=>setDatos(resp))
-    .catch(err=>console.log(err))
-    
 
-},[])
+function ItemList({productos}) {
+ 
 
 return(
     <div className="container">
-        {
-        Datos.map(Traje=>
-    
-      <Item
-      key={Traje.id}
-      articulo={Traje.articulo}
-      imagen={Traje.imagen}/>
-     
-          )
+        {Array.isArray(productos) && productos.map((produt)=>{
+          return <Item key={produt.id} {...produt}/>
+        })
+      
         }
 
     </div>

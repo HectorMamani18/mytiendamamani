@@ -1,13 +1,14 @@
 .Titulo{
     background-color:  black;
     color: white;
+    font-size: 300%;
 }
 
 ion-icon{
     font-size: 460%;
     display: block;
     position: absolute;
-    top: -2%;
+    top: -1;
     right: 15%;
     border-radius: 0px;
     color: white;

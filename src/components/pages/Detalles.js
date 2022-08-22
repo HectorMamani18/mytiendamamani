@@ -11,6 +11,7 @@ function Detalles(){
        <div>
         <Navbar/>
         <h1 className='Titulo'>Suits for Men</h1>
+        <h2>Detalle de Producto</h2>
            <Logo/>
       <Detail/>
       </div>

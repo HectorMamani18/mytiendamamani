@@ -7,14 +7,12 @@ import Navbar from '../nav/Navbar'
 function Catalogo(){
     return(
         
-        <>
-        <div>
         
-            <Navbar/>
-            <h1 className='Titulo'>Suits for Men</h1>
-            </div>
-        <ItemListContainer /></>
-
+        <div>
+     
+        <Navbar/> 
+        <ItemListContainer/>
+      </div>
     )
 }
 
