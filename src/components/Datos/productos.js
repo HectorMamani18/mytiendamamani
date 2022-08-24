@@ -74,11 +74,11 @@ export function prodData(category){
 export async function prodDataid (category) {
 
     let response = [];
-    // creo la referencia a la coleccion que quiero traer
+  
     const colRef = collection(DB,'productos');
 
     try {
-        const snapshot = await getDocs(colRef); // ya no necesito más el then
+        const snapshot = await getDocs(colRef); 
 
         response = snapshot.docs.map((rawDoc) => {
             return {
