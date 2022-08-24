@@ -23,12 +23,7 @@ function Detail( id,articulo,Precio,imagen,Stock) {
   setProductoAgregado(true);
 
   }
-
-
-	
-
-
-    return (
+  return (
 		<div >
 			  <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={primerImg.src} />

@@ -14,7 +14,7 @@ function Item({id,articulo,imagen}){
       <Card.Img variant="top" src={primerImg.src}></Card.Img>
       <Card.Body>
         <Card.Title>{articulo}</Card.Title>
-        <Link className="link" to={`/item/${id}`} >Ver detalle del producto</Link>
+        <Link className="link" to={`/item/${id}`} > <button> Ver detalle del producto</button></Link>
       </Card.Body>
     </Card>  
     </div>

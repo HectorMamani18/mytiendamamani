@@ -9,9 +9,9 @@ export default function ItemDetailContainer(){
     const produId = !isNaN(id) && +id;
 
 
-    const {dataDeil, setDataDeil} = useState({});
+    const [dataDeil, setDataDeil] = useState({});
     useEffect(()=>{
-        setDataDeil({})
+        setDataDeil({});
         const produprom = getItem(produId)
         produprom.then(
             (Datos)=>{
@@ -32,7 +32,7 @@ export default function ItemDetailContainer(){
             {dataDeil && dataDeil.id ? (
                 <Detail {...dataDeil}/>
             ) :( 
-                <div > cargando</div>
+                <div > Cargando</div>
             ) }
          </div>
     );

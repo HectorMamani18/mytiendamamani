@@ -5,7 +5,17 @@ import Home from './components/pages/Home';
 import Cart from './components/pages/Cart'
 import Boda from './components/pages/Boda'
 import  CartContextProvider  from './components/Context/CartContext';
-import ItemDetailContainer from './components/Detalles/ItemDetailContainer/ItemDetailContainer';
+import {ItemDetailContainer} from './components/Detalles/index'
+import Detalles from './components/pages/Detalles';
+
+
+
+
+
+
+
+
+
 function App() {
   
   return (
@@ -14,9 +24,9 @@ function App() {
       
       <Routes>
         <Route path='/'element={<Home/>}/>
-        <Route path='/Categoria/:id' element={<Boda/>}/>
+        <Route path='/categoria/:id' element={<Boda/>}/>
 
-        <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+        <Route path='/item/:idDetail' element={<Detalles/>}/>
         <Route path='/Cart' element={<Cart/>}/>
       </Routes>
      </CartContextProvider>

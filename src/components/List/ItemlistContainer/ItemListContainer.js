@@ -13,15 +13,11 @@ import  {prodData} from '../../Datos/productos'
    const [listItem, setlistItem] = useState([]);
    useEffect(()=>{
     setlistItem([]);
-    const productosProm = prodData(category);
-    productosProm.then(
-        (Datos)=>{
-            setlistItem(Datos);
-        },
-        (err)=>{
-            console.log("error",err);
-        }
-    );
+   async function getD (){
+    const products = await prodData(category)
+    setlistItem(products)
+   }
+   getD();
    },[category])
     
      return (

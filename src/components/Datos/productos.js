@@ -1,4 +1,7 @@
- const  Datos = [{
+import {DB} from './productosFireBase'
+import { collection,getDocs } from 'firebase/firestore';
+
+const  Datos = [{
     
     id : 1,
     categoria: 2,
@@ -48,18 +51,46 @@ export default Datos ;
 
 
 export function prodData(category){
-    console.log('>Category',category)
+   
     return new Promise((resolve, reject) => {
-        setTimeout(()=>{
-            if (category){
-                resolve(Datos.filter(prod=> prod.categoria === category));
-
-            }else {
-                resolve(Datos);
+        const colRef= collection(DB,'productos');
+        getDocs(colRef).then((snapshot)=>{
+            console.log('>> snapshot.docs',snapshot.docs)
+        const formatprod = snapshot.docs.map((rawDoc)=>{
+            return{
+                id: rawDoc.id,
+                ...rawDoc.data()
             }
-        })
-    })
+        });
+    console.log('>> productos:', formatprod);
+    resolve(formatprod);    
+    
+    }, (error)=>{
+        reject('>> error:', error)
+    });
+    });
 
+}
+export async function prodDataid (category) {
+
+    let response = [];
+    // creo la referencia a la coleccion que quiero traer
+    const colRef = collection(DB,'productos');
+
+    try {
+        const snapshot = await getDocs(colRef); // ya no necesito más el then
+
+        response = snapshot.docs.map((rawDoc) => {
+            return {
+                id: rawDoc.id,
+                ...rawDoc.Datos()
+            }
+        });
+        
+    } catch (err) {
+        console.log('>> Error al intentar traer los docs: ', err);
+    } 
+    return response;
 }
 
 export function  getItem (id){
@@ -69,4 +100,5 @@ export function  getItem (id){
         }, 2000);
     });
 }
+
 
