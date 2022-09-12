@@ -12,7 +12,7 @@ export default function Home () {
             
            <Navbar className='section'/> 
            <h1 className='Titulo'>Suits for Men</h1>
-           <Logo/>
+           <Logo />
 
            <br></br>
            <ItemListContainer/>

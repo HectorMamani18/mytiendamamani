@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
     return(
 
         <div>
-            <ion-icon name="cart"></ion-icon>
+            <Link to={'/Cart'}><ion-icon name="cart"> </ion-icon></Link>
         </div>
     )
 }

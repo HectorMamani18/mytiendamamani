@@ -5,19 +5,24 @@ import Item from '../Item/Item'
 
 
 
-function ItemList({productos}) {
+function ItemList({ItemList,LoadingPage}) {
  
 
 return(
-    <div className="container">
-        {Array.isArray(productos) && productos.map((produt)=>{
-          return <Item key={produt.id} {...produt}/>
-        })
+  <div>
+   {LoadingPage ? <h1>Cargando Productos.....</h1>:
+   
+   
+   
+   ItemList.map((item)=>{
+         return(
+            <Item key={item.ItemList}{...item}/>
+         )
+      })
       
-        }
-
-    </div>
-)
+   }
+  </div>
+   )
 }
 
-export default ItemList;
+export default ItemList

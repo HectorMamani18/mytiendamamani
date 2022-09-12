@@ -7,11 +7,11 @@ import {Context}  from '../../Context/CartContext';
 
 
 
-function Detail( id,articulo,Precio,imagen,Stock) {
+function Detail({imagen,Precio,articulo,Stock,id,LoandingPage}) {
   const {addCartItem} = useContext(Context);
-  const primerImg = Array.isArray(imagen) && imagen.length && imagen[0];
+ 
   
-  const [productoAgregado, setProductoAgregado] = useState(false);
+  const [productoAgregado, setProductoAgregado] = useState(true);
 
   const onAdd= (quantity) =>{
     addCartItem();
@@ -24,10 +24,14 @@ function Detail( id,articulo,Precio,imagen,Stock) {
 
   }
   return (
-		<div >
-			  <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={primerImg.src} />
+    
+		<div  >
+			{LoandingPage ?
+      <h1>cargando</h1>:
+      <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={imagen} />
       <Card.Body>
+        <h2>{articulo}</h2>
         <Card.Title>{articulo}</Card.Title>
         <Card.Text>{Precio}</Card.Text>
         { productoAgregado ?  <Link to={'/Cart'}> Terminar Mi Compra</Link> : (
@@ -36,7 +40,9 @@ function Detail( id,articulo,Precio,imagen,Stock) {
       </Card.Body>
     </Card>
 
-					
+      }
+
+				
 			
 		</div>
     );

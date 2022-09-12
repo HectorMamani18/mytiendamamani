@@ -1,12 +1,13 @@
-import ItemDetailContainer from '../Detalles/ItemDetailContainer/ItemDetailContainer';
+import Detail from '../Detalles/ItemDetail/ItemDetail'
 import React from 'react';
 import Navbar from '../nav/Navbar';
 import Logo from '../nav/Icon/CartWidget'
+import {useParams} from 'react-router-dom'
 
 
 
 function Detalles(){
-
+  const {detalleId} =useParams();
     return(
       <div>
      
@@ -14,7 +15,7 @@ function Detalles(){
       <h1 className='Titulo'>Suits for Men</h1> 
       <Logo/>
       <br></br>
-      <ItemDetailContainer/>
+      <Detail detalleId={detalleId}/>
     </div>
     )
 }

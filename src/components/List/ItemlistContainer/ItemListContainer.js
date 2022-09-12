@@ -1,32 +1,30 @@
 import React,{useState,useEffect} from 'react'
-import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList'
-import  {prodData} from '../../Datos/productos'
+import { getFetch } from '../../Datos/productos';
+
 
 
 
 
  export default function ItemListContainer () {
-    const{id} =useParams();
-    const category = !isNaN(id) && +id;
-
-   const [listItem, setlistItem] = useState([]);
+   
+ const [listItem, setlistItem] = useState([]);
+ const [loading, setLoading] = useState(true)
    useEffect(()=>{
-    setlistItem([]);
-   async function getD (){
-    const products = await prodData(category)
-    setlistItem(products)
-   }
-   getD();
-   },[category])
+    async function callFetch(){
+        getFetch
+        .then((res)=>setlistItem(res))
+        .catch((err)=>console.log('error'.err))
+        .finally(()=>setLoading(false))
+    }
+    callFetch();
+   },[]);
     
      return (
     <div>
-        {Array.isArray(listItem) && listItem.length === 0 ?(
-           <br></br>
-        ):(
-            <ItemList productos={listItem}/>
-        )}
+      
+            <ItemList  ItemList={listItem} LoadingPage={loading}/>
+      
       
         
         

@@ -1,39 +1,33 @@
+
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import  { getItem } from "../../Datos/productos";
-import Detail from "../ItemDetail/ItemDetail";
+import { getItemById } from "../../Datos/productos";
+
+import Detail from '../ItemDetail/ItemDetail'
 
 
-export default function ItemDetailContainer(){
-    const {id} =useParams();
-    const produId = !isNaN(id) && +id;
+export default function ItemDetailContainer() {
+    
+    const [itemDeil, setDataDeil] = useState([]);
+    const [loading, setLoading] = useState(true)
 
+    
+    const { idItem } = useParams();
+    console.log(idItem);
 
-    const [dataDeil, setDataDeil] = useState({});
-    useEffect(()=>{
-        setDataDeil({});
-        const produprom = getItem(produId)
-        produprom.then(
-            (Datos)=>{
-                setDataDeil(Datos);
+    useEffect(() => {
 
-            },
-            (err) => {
-                console.log(
-                    "Ha ocurrido un error al buscar la info del Producto: ",
-                    err
-                );
-            }
-        );
-    },[]);
+        getItemById(idItem)
+        .then(item =>{
+            setDataDeil(item[0])
+        })
+        .catch((err)=> console.log('Ocurrio un error. ' + err))
+        .finally(()=>setLoading(false))
+
+    }, [idItem]);
     return(
 
          <div>
-            {dataDeil && dataDeil.id ? (
-                <Detail {...dataDeil}/>
-            ) :( 
-                <div > Cargando</div>
-            ) }
+            <Detail  {...itemDeil}  LoadingPage={loading}/>
          </div>
     );
 }
